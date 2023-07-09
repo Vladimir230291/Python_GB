@@ -63,7 +63,7 @@ while True:
             print("-> Нельза снять больше чем на счету\n")
             continue
         else:
-            cash -= tmp - check_withdrawal_cash(tmp)
+            cash -= tmp - checkuion_withdrawal_cash(tmp)
             print("На счету: %.2f" % round(cash, 2))
 
     elif select == 3:
