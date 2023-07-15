@@ -22,5 +22,5 @@ for i, item in enumerate(data, start=1):
     elif type(item) == str:
         check_value = "Это строка"
 
-    print(f"Номер:{i} - значение: {item}\t Aдресс в памяти: {adress}    |   размер в памяти:{size_of_item}"
-          f" | хеш объекта: {hash_of_item} - {check_value}")
+    print(f"Номер:{i} - значение: {item:<5}\t Aдресс в памяти: {adress:>18}  |  размер в памяти:{size_of_item:>3}"
+          f" | хеш объекта: {hash_of_item:<20} - {check_value}")
