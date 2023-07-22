@@ -6,3 +6,9 @@
 # ✔ Для вывода результата используйте «принт»
 # без перехода на новую строку
 
+# gen = ([f"{j} x {i} = {i * j}\n" for i in range(2, 11)] for j in range(2, 10))
+#
+# print(*next(gen))
+
+table = "\n".join("\t".join(f"{j}x{i}={i*j}" for j in range(2, 11)) for i in range(2, 10))
+print(table)
