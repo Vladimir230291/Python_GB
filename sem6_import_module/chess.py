@@ -8,9 +8,9 @@ from random import randint
 
 __all__ = ["get_queen_coordinates", "queens_attack", "random_coordinates"]
 
-__LIMIT_QUEENS = 8
-__HIGHT_LIMIT = 8
-__LOW_LIMIT = 1
+LIMIT_QUEENS = 8
+HIGHT_LIMIT = 8
+LOW_LIMIT = 1
 
 
 def queens_attack(queens) -> bool:
@@ -27,9 +27,9 @@ def get_queen_coordinates() -> list:
     queens = []
     count = 0
     num_queen = 1
-    while count < __LIMIT_QUEENS:
+    while count < LIMIT_QUEENS:
         x, y = map(int, input(f"Введите координаты ферзя {num_queen} от 1 до 8 (x, y): ").split())
-        if __LOW_LIMIT <= x <= __HIGHT_LIMIT and __LOW_LIMIT <= y <= __HIGHT_LIMIT:
+        if LOW_LIMIT <= x <= HIGHT_LIMIT and LOW_LIMIT <= y <= HIGHT_LIMIT:
             num_queen += 1
             count += 1
             queens.append((x, y))
@@ -42,7 +42,7 @@ def get_queen_coordinates() -> list:
 def random_coordinates() -> list:
     queens = []
     count = 0
-    while count < __LIMIT_QUEENS:
+    while count < LIMIT_QUEENS:
         x = randint(1, 8)
         y = randint(1, 8)
         if x != y:
@@ -54,5 +54,5 @@ def random_coordinates() -> list:
 
 
 if __name__ == "__main__":
-    queens = get_queen_coordinates()
+    queens = random_coordinates()
     print(queens_attack(queens))

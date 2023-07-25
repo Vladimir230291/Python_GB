@@ -4,7 +4,7 @@
 
 # from sem6_import_module.chess import random_coordinates, get_queen_coordinates, queens_attack
 from sem6_import_module import chess
-from random import randint
+
 
 if __name__ == "__main__":
 
