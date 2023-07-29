@@ -6,10 +6,7 @@
 from random import randint as rd
 from sys import argv
 
-"""
-Функция принимает на вход три целых числа: нижнюю и верхнюю границу и количество попыток.
 
-"""
 __all__ = ["get_random_num"]
 START = 0
 STOP = 30
@@ -17,6 +14,10 @@ AMOUNT = 5
 
 
 def get_random_num(start: int = START, stop: int = STOP, amount: int = AMOUNT):
+    """
+    Функция принимает на вход три целых числа: нижнюю и верхнюю границу и количество попыток.
+
+    """
     rand_num = rd(start, stop)
     while AMOUNT > 0:
         print(f"Количество попыток: {amount}")

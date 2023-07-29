@@ -45,11 +45,9 @@ def random_coordinates() -> list:
     while count < LIMIT_QUEENS:
         x = randint(1, 8)
         y = randint(1, 8)
-        if x != y:
-            queens.append((x, y))
-            count += 1
-        else:
-            continue
+        queens.append((x, y))
+        count += 1
+
     return queens
 
 
