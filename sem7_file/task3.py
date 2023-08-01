@@ -11,6 +11,7 @@
 # сколько в более длинном файле.
 # ✔ При достижении конца более короткого файла,
 # возвращайтесь в его начало
+__all__ = ["read_file", "readline_or_begin"]
 
 from typing import TextIO
 
@@ -42,6 +43,7 @@ def readline_or_begin(file: TextIO) -> str:
     return text[:-1]
 
 
-read_file("/home/user/PycharmProjects/Python_GB/sem7_file/random_num.txt",
-          "/home/user/PycharmProjects/Python_GB/sem7_file/random_name.txt",
-          "/home/user/PycharmProjects/Python_GB/sem7_file/result.txt")
+if __name__ == "__main__":
+    read_file("random_num.txt",
+              "random_name.txt",
+              "result.txt")

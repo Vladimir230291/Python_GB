@@ -18,4 +18,4 @@ def add_random_num_in_file(count_str: int, file_name: str):
 
 
 if __name__ == "__main__":
-    add_random_num_in_file(5, "/home/user/PycharmProjects/Python_GB/sem7_file/random_num.txt")
+    add_random_num_in_file(5, "random_num.txt")

@@ -22,4 +22,6 @@ def make_files(f_ext: str, min_len_name: int = 6, max_len_name: int = 30,
         with open(rf"file_for_task4/{name}.{f_ext}", "wb") as f:
             f.write(data_bytes)
 
-
+#
+# if __name__ == "__main__":
+#

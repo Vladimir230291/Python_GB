@@ -35,5 +35,5 @@ def gen_name() -> str:
 #     with open("random_name.txt", "a", encoding="utf-8") as f:
 #         print(text, file=f)
 
-
-
+if __name__ == "__main__":
+    gen_name()
