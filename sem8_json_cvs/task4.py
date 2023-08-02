@@ -12,10 +12,21 @@ import csv
 import json
 
 
-def read_csv(file):
-    with open(file, 'r', encoding="utf-8") as file_csv:
-        csv_file = csv.reader(file_csv)
-        print(csv_file)
+def csv2json(csv_file_path: str, json_file_path: str) -> None:
+    with open(csv_file_path, 'r', encoding='utf-8') as f:
+        data_csv_rows = csv.reader(f, dialect="excel-tab")
+        data = []
+        for i, row in enumerate(data_csv_rows):
+            if i:
+                access_level, user_id, name = row
+                user_data = {}
+                user_data["access_level"] = int(access_level)
+                user_data["user_id"] = f'{int(user_id):010}'
+                user_data["name"] = name.capitalize()
+                user_data["hash"] = hash((user_id, name))
+                data.append(user_data)
+    with open(json_file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-read_csv("result_task2.csv")
+csv2json("result_task2.csv", "result_task4.json")

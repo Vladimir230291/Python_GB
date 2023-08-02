@@ -5,23 +5,20 @@ import json
 import csv
 
 
-def convert_json_to_csv(json_filename: str):
-    try:
-        with open(json_filename, 'r') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        print(f"Файл {json_filename} не найден.")
-        return
+def convert_json_to_csv(json_filename: str) -> None:
+    with open(json_filename, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    rows = []
+    for access_level, user in data.items():
+        for id_user, name in user.items():
+            rows.append({"access_level": int(access_level), "id": int(id_user), "name": name})
 
-    # замена формата фойла
-    csv_filename = json_filename.split(".")[0] + ".csv"
+    name_csv_file = json_filename.split('.')[0] + ".csv"
 
-    with open(csv_filename, 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(data.keys())
-        writer.writerow(data.values())
-
-    print(f"Содержимое файла {json_filename} успешно сохранено в {csv_filename} в формате CSV.")
+    with open(name_csv_file, "w", encoding="utf-8") as f:
+        dict_writer = csv.DictWriter(f, fieldnames=["access_level", "id", "name"], dialect="excel-tab")
+        dict_writer.writeheader()  # запись заголовков
+        dict_writer.writerows(rows)  # запись строк под заголовками
 
 
 convert_json_to_csv("result_task2.json")
