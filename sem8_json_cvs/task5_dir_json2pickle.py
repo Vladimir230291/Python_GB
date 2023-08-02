@@ -9,6 +9,7 @@ import json
 import pickle
 import os
 
+__all__ = ["pack_file"]
 
 def pack_file(dir_path: str) -> None:
     list_file = filter(lambda list_file: list_file[-5:] == ".json", os.listdir(dir_path))
@@ -18,5 +19,3 @@ def pack_file(dir_path: str) -> None:
         with open(f'{json_file[:-5]}.pickle', 'wb') as pickle_file:
             pickle.dump(data, pickle_file)
 
-
-pack_file('.')

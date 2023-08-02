@@ -4,6 +4,7 @@
 import json
 import csv
 
+__all__ = ["convert_json_to_csv"]
 
 def convert_json_to_csv(json_filename: str) -> None:
     with open(json_filename, 'r', encoding='utf-8') as f:
@@ -21,4 +22,4 @@ def convert_json_to_csv(json_filename: str) -> None:
         dict_writer.writerows(rows)  # запись строк под заголовками
 
 
-convert_json_to_csv("result_task2.json")
+

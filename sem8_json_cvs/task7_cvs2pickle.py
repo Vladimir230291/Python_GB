@@ -1,9 +1,10 @@
 # задание 7
-
+# Не используюя для cvs DictWriter
 import csv
 import json
 import pickle
 
+__all__ = ["cvs2pickle_print"]
 
 def cvs2pickle_print(csv_file_path: str) -> None:
     with open(csv_file_path, 'r', encoding='utf-8') as f:
@@ -18,5 +19,3 @@ def cvs2pickle_print(csv_file_path: str) -> None:
                 list_row.append(row_data)
         print(pickle.dumps(list_row))
 
-
-cvs2pickle_print("csv_task6.csv")

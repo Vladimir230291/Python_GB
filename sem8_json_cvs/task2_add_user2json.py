@@ -1,6 +1,7 @@
 import json
 import os.path
 
+__all__ = ["add_user_information"]
 
 def add_user_information(json_file):
     user_ids = set()
@@ -37,4 +38,4 @@ def add_user_information(json_file):
             break
 
 
-add_user_information("result_task2.json")
+

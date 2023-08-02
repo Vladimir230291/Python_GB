@@ -11,7 +11,7 @@
 import csv
 import json
 
-
+__all__ = ["csv2json"]
 def csv2json(csv_file_path: str, json_file_path: str) -> None:
     with open(csv_file_path, 'r', encoding='utf-8') as f:
         data_csv_rows = csv.reader(f, dialect="excel-tab")
@@ -29,4 +29,4 @@ def csv2json(csv_file_path: str, json_file_path: str) -> None:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-csv2json("result_task2.csv", "result_task4.json")
+

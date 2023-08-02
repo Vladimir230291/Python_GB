@@ -5,11 +5,12 @@
 # файла новый с данными в формате JSON.
 # Имена пишите с большой буквы.
 # Каждую пару сохраняйте с новой строки.
+
 import json
 import os
 
-
-def create_json(url_input: str, url_output: str) -> None:
+__all__ = ["txt_to_json"]
+def txt_to_json(url_input: str, url_output: str) -> None:
     dict_json = {}
     url = url_output
     with open(url_input, 'r', encoding="utf-8") as file_in:
@@ -22,4 +23,4 @@ def create_json(url_input: str, url_output: str) -> None:
 
 if __name__ == "__main__":
     os.chdir("..")  # что бы отрабатывал относительный путь.
-    create_json(r"sem7_file\result.txt", "sem8_json_cvs/result_task1.json")
+    txt_to_json(r"sem7_file\result.txt", "sem8_json_cvs/result_task1.json")
