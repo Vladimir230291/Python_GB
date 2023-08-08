@@ -7,8 +7,7 @@
 # 📌 Убедитесь, что свойство возраст недоступно для прямого
 # изменения, но есть возможность получить текущий возраст.
 
-import datetime
-
+__all__ = ["Human"]
 
 class Human:
     def __init__(self, first_name, last_name, second_name, age: int, phone_number):
@@ -27,9 +26,12 @@ class Human:
                 f'Возраст: {self.__age}')
 
 
-h = Human("Имя", "Фамилия", "Отчество", 21, "89618887878")
-print(h.full_name())
-h.birthday()
-print(h.full_name())
-h.birthday()
-print(h.full_name())
+
+if __name__ == "__main__":
+    h = Human("Имя", "Фамилия", "Отчество", 21, "89618887878")
+    print(h.full_name())
+    h.birthday()
+    h.birthday()
+    print(h.full_name())
+
+

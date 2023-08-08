@@ -9,12 +9,9 @@
 
 class Rectangle:
 
-    def __init__(self, a, b=None):
+    def __init__(self, a: int, b: int = None):  # a & b стороны прямоугольника
         self.a = a
-        if b is None:
-            self.b = a
-        else:
-            self.b = b
+        self.b = a if b is None else b
 
     def perimeter(self):
         return (self.a + self.b) * 2
