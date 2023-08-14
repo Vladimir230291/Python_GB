@@ -10,14 +10,14 @@
 class Rectangle:
 
     def __init__(self, a: int, b: int = None):  # a & b стороны прямоугольника
-        self.a = a
-        self.b = a if b is None else b
+        self._a = a
+        self._b = a if b is None else b
 
     def perimeter(self):
-        return (self.a + self.b) * 2
+        return (self._a + self._b) * 2
 
     def square(self):
-        return self.a * self.b
+        return self._a * self._b
 
 
 r = Rectangle(43)
