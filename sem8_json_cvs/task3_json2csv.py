@@ -6,6 +6,7 @@ import csv
 
 __all__ = ["convert_json_to_csv"]
 
+
 def convert_json_to_csv(json_filename: str) -> None:
     with open(json_filename, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -20,6 +21,3 @@ def convert_json_to_csv(json_filename: str) -> None:
         dict_writer = csv.DictWriter(f, fieldnames=["access_level", "id", "name"], dialect="excel-tab")
         dict_writer.writeheader()  # запись заголовков
         dict_writer.writerows(rows)  # запись строк под заголовками
-
-
-
