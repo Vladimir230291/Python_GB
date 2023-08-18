@@ -1,17 +1,38 @@
-import csv
+class UserException(Exception):
+    pass
 
-# Открываем файл CSV
-with open('table.csv', 'r', encoding="utf-8") as file:
-    # Создаем объект DictReader
-    csv_reader = csv.DictReader(file)
 
-    # Создаем словарь
-    data_list = []
+class UserNameError(UserException):
+    def __init__(self, value):
+        self.value = value
 
-    # Читаем каждую строку CSV и добавляем значения в словарь
-    for row in csv_reader:
-        data_list.append(row)
+    def __str__(self):
+        return f"Имя должно быть большое 6 символов"
 
-# Выводим содержимое словаря
-print("____")
-print(data_list[0].keys())
+
+class UserAgeError(UserException):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f'возраст должен быть целым' \
+               f'у Вас тип {type(self.value)} и значение {self.value}'
+
+
+class User:
+    MIN = 6
+    MAX = 30
+
+    def __init__(self, name, age):
+        if self.MIN < len(name) <= self.MAX:
+            self.name = name
+        else:
+            raise UserNameError(name)
+        if not isinstance(age, (int, float)) or age < 0:
+            raise UserAgeError(age)
+        else:
+            self.age = age
+
+
+u = User("qwerter", -12)
+print(u)
