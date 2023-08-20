@@ -7,16 +7,15 @@
 # Реализуйте работу через обработку исключений.
 
 
-def get_items_dict(dict_operation: dict, key=None, value=None):
+def my_get(my_dict, key, default: int | float = None) -> int | float | None:
+    result = default
     try:
-        tmp = dict_operation.pop(key)
-        return dict_operation
+        result = my_dict[key]
     except KeyError as e:
-        print(f"такого ключа не существет {e}")
-        dict_operation[None] = None
-
+        pass
+    return result
 
 
 dict_value = {1: 1.1, 2: 2.2, 3: 3.3}
-get_items_dict(dict_value, 3, 3)
-print(dict_value)
+
+print(my_get(dict_value, 4, "Пусто"))
