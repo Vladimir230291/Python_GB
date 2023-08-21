@@ -9,4 +9,4 @@ def path_absolut(text: str):
     return res
 
 
-print(path_absolut("/home/user/PycharmProjects/Python_GB/sem5_gen_inter.txt"))
+print(path_absolut("/home/users/PycharmProjects/Python_GB/sem5_gen_inter.txt"))

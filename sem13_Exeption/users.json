@@ -1,40 +1,57 @@
-[{
-  "access_level": 1,
-  "user_id": "0000000001",
-  "name": "Владимир"
-},
-{
-"access_level": 2,
-"user_id": "0000000002",
-"name": "Егор"
-},
-{
-"access_level": 2,
-"user_id": "0000000003",
-"name": "Костя"
-},
-{
-"access_level": 2,
-"user_id": "0000000042",
-"name": "Лена"
-},
-{
-"access_level": 3,
-"user_id": "0000000012",
-"name": "Кирилл"
-},
-{
-"access_level": 3,
-"user_id": "0000000023",
-"name": "Евгений"
-},
-{
-"access_level": 3,
-"user_id": "0000000033",
-"name": "Джек"
-},
-{
-"access_level": 4,
-"user_id": "0000000011",
-"name": "Влад"
-}]
+[
+  {
+    "name": "Себасътьян",
+    "user_id": 13,
+    "access_level": 1
+  },
+  {
+    "name": "Кирил",
+    "user_id": 333,
+    "access_level": 3
+  },
+  {
+    "name": "Джек",
+    "user_id": 4,
+    "access_level": 6
+  },
+  {
+    "name": "Костя",
+    "user_id": 3,
+    "access_level": 3
+  },
+  {
+    "name": "Себасътьян",
+    "user_id": 333,
+    "access_level": 3
+  },
+  {
+    "name": "Влад",
+    "user_id": 4,
+    "access_level": 7
+  },
+  {
+    "name": "Лена",
+    "user_id": 3,
+    "access_level": 3
+  },
+  {
+    "name": "Кирилл",
+    "user_id": 2,
+    "access_level": 4
+  },
+  {
+    "name": "Евгений",
+    "user_id": 4,
+    "access_level": 5
+  },
+  {
+    "name": "Владимир",
+    "user_id": 1,
+    "access_level": 1
+  },
+  {
+    "name": "Егор",
+    "user_id": 2,
+    "access_level": 2
+  }
+]

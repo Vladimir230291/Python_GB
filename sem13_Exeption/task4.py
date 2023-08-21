@@ -10,7 +10,7 @@
 import json
 from typing import List, Set
 
-from task3_4 import ErrorLevel, ErrorAccess
+
 
 
 class User:
@@ -20,10 +20,16 @@ class User:
         self.user_level = user_level
 
     def __str__(self):
-        return f'{self.name = }, {self.user_id = }, {self.user_level = }'
+        return f'{[self.user_level, self.user_id, self.name]}'
+
+    def __eq__(self, other):
+        return self.name == other.name and self.user_id == other.user_id
+
+    def __hash__(self):
+        return hash((self.name, self.user_id))
 
 
-def load_users(json_file_path: str) -> set[set[User]]:
+def load_users(json_file_path: str) -> set[User]:
     with open(json_file_path, 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
     users_set = set()

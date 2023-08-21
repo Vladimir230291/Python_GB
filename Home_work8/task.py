@@ -46,4 +46,4 @@ def dir_recursive_walk(directory):
 
 
 if __name__ == "__main__":
-    dir_recursive_walk('/home/user/PycharmProjects/Python_GB')
+    dir_recursive_walk('/home/users/PycharmProjects/Python_GB')
